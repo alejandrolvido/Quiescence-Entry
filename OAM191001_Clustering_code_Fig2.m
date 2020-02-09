@@ -19,7 +19,7 @@
 
 cd
 clearvars 
-load('Toy_data_Fig2')
+load('Toy_data_Fig3')
 
 % save('Toy_data_Fig3','analysisY')
         starti=1; % first time point
