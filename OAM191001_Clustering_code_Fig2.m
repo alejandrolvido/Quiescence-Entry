@@ -19,7 +19,7 @@
 
 cd
 clearvars 
-load('Toy_data_Fig3')
+load('Toy_data_Fig2')
 
 % save('Toy_data_Fig3','analysisY')
         starti=1; % first time point
@@ -92,7 +92,7 @@ analysisY.Splot_info_Cdc10=analysisY.Splot_info(outperm2,:);
 % however, once the clustering is validated using a second marker, the number of 
 % clusters remain the same throughout the remaining experiments.  
 
-%%%%%%%%%%--------------- k means clsutering ----------------%%%%%%%%%%%%%%
+%%%%%%%%%%--------------- clsutering using fcentroids----------------%%%%%%%%%%%%%%
 
 Kgroup=3;% 
 [grId,C,sumd] = kmeans(timeseriesMat_Cdc10, Kgroup, 'Replicates', 10, 'MaxIter', 10000, 'Display', 'final','Distance','correlation');
