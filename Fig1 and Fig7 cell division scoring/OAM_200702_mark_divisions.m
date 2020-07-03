@@ -2,6 +2,9 @@
 %%% this script is an example of how to mark the time of cell division by
 %%% looking at the Cdc10 signal (subplot top left) and budding (subplot bottom left)
 %%% and other two fluorescent channels (subplots on the right)
+%%% it requires to unzipped the Pos3 folder and to be run from the folder 'Fig1 and Fig7 cell division scoring'
+
+
 pwd
 currentFolder = pwd;
 
