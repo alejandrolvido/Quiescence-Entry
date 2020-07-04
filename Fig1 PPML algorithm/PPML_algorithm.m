@@ -140,9 +140,8 @@ C=centroi{a,b};%
 %save('centroids','C'); % uncomment to save
 
 %% used the centroids to cluster new data
-
 X_new = X_test;
-[idx_test]=fcentroids(X_new) ;
+[idx_test]=fcentroids(X_new);
 
 %% visualize clustering as time series heatmap
 timeseriesMat=X_test;% analysisY.SPLOT_6;
@@ -167,4 +166,39 @@ xticks(starti:sr:endti);
 curTick = ax.XTick;
 ax.XTickLabel = round((curTick)*sr1/60);
 
+
+colrs=['r'; 'b'; 'k'; 'g'; 'c';'m';'y']; % for plotting
+limX=([0 endti]); 
+group=(1:3);% specify number of clusters to plot
+axis=[50 300]; % adjust according to marker intensity 
+
+arrestT=10;
+t=1:length(timeseriesMat);
+AAA=1;
+BBB=250;%endti
+sr=48; % time scale on x axis
+sr1=5; % sampling rate
+starti=1; % relative first value on plot
+endti=BBB-AAA; % relative last value on plot
+starti2=80; % y limit
+endti2=275; % y limit
+figure
+for i=1:3
+    Mat_A=timeseriesMat((X_info_test== i),:);
+    sem = std(Mat_A, [], 1, 'omitnan')./sqrt(size(Mat_A,1));
+    hold on
+    s1 = shadedErrorBarV2(t, nanmean(Mat_A), 2*sem, 'lineprops', colrs(i));
+    hold on
+    xline(arrestT,'--b','LineWidth',1.0) ;%  'Starvation'       
+end
+
+ax = gca;
+ax.XTickMode = 'manual';
+ax.XLim = [starti endti];
+ax.YLim = [starti2 endti2];
+xticks(starti:sr:endti);
+curTick = ax.XTick;
+ax.XTickLabel = round((curTick)*sr1/60);
+
+xlabel('Time (h)');ylabel('Cdc10 Signal a.u.') 
 
