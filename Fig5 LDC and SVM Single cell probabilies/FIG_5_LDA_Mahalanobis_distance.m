@@ -39,7 +39,7 @@ figtmp = imagesc([maja1(Bcells,:); maja1(Acells,:)]);%
 colorbar;colormap(jet)
 caxis([0 20])
 
-    titlex=('Mahalanobis diatnce to cluster 2');         
+    titlex=('Mahalanobis distance to cluster 2');         
     title(titlex)
     xlabel('Time point');
     ylabel('Cell index');
@@ -84,11 +84,11 @@ for ik4=group  % loop to plot the average curve for each cluster
     hold on
 end
               
-    titlex=('Mahalanobis to cluster 2');         
+    titlex=('Separation of clusters by Cdc10 (Mahalanobis distance)');         
     title(titlex)
     xlim(limX)
     xlabel('Time point');
-    ylabel('Cell index');  
+    ylabel('Mahalanobis Distance to cluster 2');  
 
 %% end
 

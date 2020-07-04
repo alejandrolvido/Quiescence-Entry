@@ -73,7 +73,7 @@ for ik4=group  % loop to plot the average curve for each cluster
     hold on
 end
               
-    titlex=('Average Probability of division');         
+    titlex=('Probability of division for Non-G1(red) and Post-mitotic G1(blue) Q-cells');         
     title(titlex)
     xlim(limX)
     ylim(limY)
@@ -113,7 +113,7 @@ for ik4=group  % loop to plot the average curve for each cluster
     hold on
 end
              
-    titlex=('average Probability of cell cycle arrest');                 
+    titlex=('Probability of arrest for Non-G1(red) and Post-mitotic G1(blue) Q-cells');                 
     title(titlex)
     xlim(limX)
     ylim(limY)
